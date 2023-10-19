@@ -11,12 +11,6 @@ public class UsuarioContract {
 
         public static final String NAME = "nombre";
 
-        public static final String SPECIALTY = "password";
-
-        public static final String PHONE_NUMBER = "phonenumber";
-
-        public static final String AVATAR_URI = "avataruri";
-
-        public static final String BIO = "bio";
+        public static final String PASSWORD = "password";
     }
 }

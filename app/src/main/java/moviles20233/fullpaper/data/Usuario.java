@@ -2,9 +2,6 @@ package moviles20233.fullpaper.data;
 
 import android.content.ContentValues;
 import android.database.Cursor;
-
-import java.time.temporal.ValueRange;
-
 import moviles20233.fullpaper.data.UsuarioContract.UsuarioEntry;
 
 public class Usuario {
@@ -19,9 +16,9 @@ public class Usuario {
     }
 
     public Usuario(Cursor cursor){
-        id =cursor.getInt(cursor.getColumnIndex( UsuarioEntry.ID ) );
-        password = cursor.getInt(cursor.getColumnIndex( UsuarioEntry.PASSWORD ) );
-        nombre =cursor.getInt(cursor.getColumnIndex(UsuarioEntry.NAME ) );
+        id = cursor.getInt( cursor.getColumnIndex( UsuarioEntry.ID ) );
+        password = cursor.getInt( cursor.getColumnIndex( UsuarioEntry.PASSWORD ) );
+        nombre = cursor.getString (cursor.getColumnIndex(UsuarioEntry.NAME ));
     }
 
     public ContentValues toContentValues(){
@@ -29,6 +26,7 @@ public class Usuario {
         values.put( UsuarioEntry.ID,id );
         values.put( UsuarioEntry.PASSWORD,password );
         values.put( UsuarioEntry.NAME,nombre );
+        return  values;
     }
 
     public int getId() {
@@ -41,5 +39,9 @@ public class Usuario {
 
     public String getNombre() {
         return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 }
