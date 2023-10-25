@@ -1,17 +1,15 @@
-package moviles20233.fullpaper.data;
+package moviles20233.fullpaper;
 
 import android.database.Cursor;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
-import android.widget.AdapterView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import moviles20233.fullpaper.R;
+import moviles20233.fullpaper.data.Usuario;
 
 public class UsuarioAdapterRecycler extends RecyclerView.Adapter<UsuarioAdapterRecycler.ViewHolder>{
 

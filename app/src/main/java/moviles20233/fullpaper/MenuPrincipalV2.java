@@ -16,7 +16,6 @@ import android.view.ViewGroup;
 
 import moviles20233.fullpaper.data.InventarioDBHelper;
 import moviles20233.fullpaper.data.Usuario;
-import moviles20233.fullpaper.data.UsuarioAdapterRecycler;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -32,7 +31,7 @@ public class MenuPrincipalV2 extends Fragment implements UsuarioAdapterRecycler.
     Usuario usuarioCargar;
 
     private LinearLayoutManager linearLayoutManager;
-    private UsarioAdapterRecycler adaptadorUsuarios;
+    private UsuarioAdapterRecycler adaptadorUsuarios;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -89,12 +88,12 @@ public class MenuPrincipalV2 extends Fragment implements UsuarioAdapterRecycler.
         listaUsuarios.setHasFixedSize( true );
         linearLayoutManager = new LinearLayoutManager( getContext() );
         listaUsuarios.setLayoutManager( linearLayoutManager);
-        adaptadorUsuario = new UsuarioAdapterRecycler( this);
-        listaUsuarios.setAdapter( adaptadorUsuario);
+        adaptadorUsuarios = new UsuarioAdapterRecycler( this);
+        listaUsuarios.setAdapter( adaptadorUsuarios);
     }
 
-    public void(UsuarioAdapterRecycler.ViewHolder,Usuario usuarioActualizado){
-        bdInventario.updateUsuario(usuarioActualizado,String.valueOf(usuarioActualizado.getId()));
+    public void  (UsuarioAdapterRecycler.ViewHolder,Usuario usuarioActualizado){
+        bdInventario.updateUsuario(usuarioActualizado, String.valueOf(usuarioActualizado.getId()));
         loadPersonas();
     }
 
