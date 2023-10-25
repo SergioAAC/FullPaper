@@ -63,6 +63,17 @@ public class InventarioDBHelper extends SQLiteOpenHelper {
         return c;
     }
 
+    public Cursor getUsuarioByIdPassword(String usuarioId, String usurioPassword){
+        Cursor c = getReadableDatabase().query(
+                UsuarioEntry.TABLE_NAME,
+                null,
+                UsuarioEntry.ID + " LIKE ? AND "+UsuarioEntry.PASSWORD + "LIKE ?",
+                new String[]{usuarioId,usurioPassword},
+                null,
+                null,
+                null);
+        return c;
+    }
     public int deleteUsuario(String usuarioId) {
         return getWritableDatabase().delete(
                 UsuarioEntry.TABLE_NAME,
