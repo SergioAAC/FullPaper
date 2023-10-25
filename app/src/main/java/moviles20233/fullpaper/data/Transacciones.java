@@ -4,6 +4,8 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import java.sql.Date;
 import moviles20233.fullpaper.data.TansaccionesContract.TransaccionesEntry;
+import moviles20233.fullpaper.data.UtensilioContract.UtensilioEntry;
+import moviles20233.fullpaper.data.UsuarioContract.UsuarioEntry;
 
 public class Transacciones {
     private int id_us;
@@ -20,8 +22,8 @@ public class Transacciones {
         this.cantidadTra = cantidadTra;
     }
     public Transacciones(Cursor cursor){
-        id_us = cursor.getInt( cursor.getColumnIndex(TransaccionesEntry.ID_US ) );
-        id_ut = cursor.getInt (cursor.getColumnIndex(TransaccionesEntry.ID_UT ) );
+        id_us = cursor.getInt( cursor.getColumnIndex(UsuarioEntry.ID ) );
+        id_ut = cursor.getInt (cursor.getColumnIndex(UtensilioEntry.ID ) );
         fecha_entrada  = Date.valueOf(cursor.getString (cursor.getColumnIndex(TransaccionesEntry.FECHA_ENTRADA ) ));
         fecha_salida  = Date.valueOf(cursor.getString (cursor.getColumnIndex(TransaccionesEntry.FECHA_SALIDA ) ));
         cantidadTra = cursor.getInt(cursor.getColumnIndex(TransaccionesEntry.CANTIDAD_TRA ) );
